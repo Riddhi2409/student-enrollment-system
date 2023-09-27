@@ -114,11 +114,13 @@ function DatePicker(props) {
         
         {dateArray.map((dates, index) => {
           const daa = dates.split(" ");
+          console.log()
+          
           return (
             <div
-              className="flex flex-col items-center text-black bg-white hover:bg-sky-200 p-2 rounded-xl font-mono shadow-md w-fit"
+              className={`${date==dates ? "bg-sky-200 " : " bg-white "}flex flex-col items-center text-black hover:bg-sky-200 p-2 rounded-xl font-mono shadow-md w-fit`}
               key={index}
-              onClick={() => setDate(`${daa[0]} ${daa[1]}, ${daa[2]}`)}
+              onClick={() => setDate(dates)}
             >
               <h1 className=" text-cyan-700">
                 {daa[0]} {daa[1]}
@@ -133,7 +135,7 @@ function DatePicker(props) {
         {morning.map((dates, index) => {
           return (
             <div
-              className="text-black bg-white hover:bg-sky-200 px-1 py-2 rounded-xl font-mono shadow-md w-fit"
+              className={`${time==dates ? "bg-sky-200 " : " bg-white "} text-black hover:bg-sky-200 px-1 py-2 rounded-xl font-mono shadow-md w-fit`}
               key={`${index} morning text-sm`}
               onClick={() => setTime(dates)}
             >
